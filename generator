@@ -1,0 +1,28 @@
+import random
+
+def shuffle_string(s):
+    return ''.join(random.sample(s, len(s)))
+
+def generate_password(number, name):
+    combined = str(number) + name 
+    password = shuffle_string(combined)
+    return password
+
+while True:   
+    name = input("Write a name: ")
+    if name.isalpha():
+        break
+    else:
+        print("Invalid Figure, Only Letters")
+
+while True:   
+    number = input("Write a date or a random number: ")
+    if number.isdigit():
+        break
+    else:
+        print("Invalid Figure, Only Numbers")
+
+password = generate_password(number, name)
+
+
+print("This is The Password you should use: ", password)
